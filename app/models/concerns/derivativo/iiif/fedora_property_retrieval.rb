@@ -47,7 +47,12 @@ module Derivativo::Iiif::FedoraPropertyRetrieval
             original_image_width = movie.width
             original_image_height = movie.height
           else
-            Imogen.with_image(image_path) do |img|
+            vips_opts = {}
+            # If the source is a PDF, only load the first page.
+            # Loading all pages can be VERY slow, especially for large PDFs.
+            vips_opts[:page] = 1 if image_path.end_with?('.pdf')
+
+            Imogen.with_image(image_path, vips_opts) do |img|
               original_image_width = img.width
               original_image_height = img.height
             end
@@ -61,6 +66,11 @@ module Derivativo::Iiif::FedoraPropertyRetrieval
             original_image_width = movie.width
             original_image_height = movie.height
           else
+            vips_opts = {}
+            # If the source is a PDF, only load the first page.
+            # Loading all pages can be VERY slow, especially for large PDFs.
+            vips_opts[:page] = 1 if image_path.end_with?('.pdf')
+
             Imogen.with_image(image_path) do |img|
               original_image_width = img.width
               original_image_height = img.height
