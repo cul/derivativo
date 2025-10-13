@@ -47,7 +47,7 @@ gem 'streamio-ffmpeg', '~> 3.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-gem 'addressable', '~> 2.7.0'
+gem 'addressable', '~> 2.8.0'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
