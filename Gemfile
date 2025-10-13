@@ -24,11 +24,11 @@ gem 'imogen', git: 'https://github.com/cul/imogen.git', branch: 'iiif_tile_gener
 gem 'jbuilder', '~> 2.7'
 # Use mysql as a database option for Active Record
 gem 'mysql2', '~> 0.5.5'
+gem 'nokogiri', '~> 1.18', '>= 1.18.9', force_ruby_platform: true
 # Use Puma as the app server
 gem 'puma', '~> 5.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 7.0.8'
-gem 'nokogiri', '~> 1.18', '>= 1.18.9', force_ruby_platform: true
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 4.8' # NOTE: Updating the redis gem to v5 breaks the current redis namespace setup
 gem 'redis-namespace', '~> 1.11'
