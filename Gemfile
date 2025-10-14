@@ -24,6 +24,7 @@ gem 'imogen', git: 'https://github.com/cul/imogen.git', branch: 'iiif_tile_gener
 gem 'jbuilder', '~> 2.7'
 # Use mysql as a database option for Active Record
 gem 'mysql2', '~> 0.5.5'
+gem 'nokogiri', '~> 1.18', '>= 1.18.9', force_ruby_platform: true
 # Use Puma as the app server
 gem 'puma', '~> 5.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -46,7 +47,7 @@ gem 'streamio-ffmpeg', '~> 3.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-gem 'addressable', '~> 2.7.0'
+gem 'addressable', '~> 2.8.0'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
