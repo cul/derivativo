@@ -58,6 +58,9 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # Vite for frontend UI
 gem 'vite_rails', '~> 3.0'
 
+# Remove the concurrent-ruby pin below when we update to Rails 7.1 (see: https://stackoverflow.com/a/79361034)
+gem 'concurrent-ruby', '1.3.4'
+
 group :development, :test do
   # rubocop + CUL presets
   gem 'rubocul', '~> 4.0.6'
