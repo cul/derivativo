@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_17_023338) do
+ActiveRecord::Schema[7.0].define(version: 2025_12_21_162435) do
   create_table "derivative_requests", force: :cascade do |t|
     t.string "identifier", null: false
     t.text "requested_derivatives", null: false
@@ -23,6 +23,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_17_023338) do
     t.text "poster_uri"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "service_uri"
     t.index ["identifier"], name: "index_derivative_requests_on_identifier", unique: true
     t.index ["status"], name: "index_derivative_requests_on_status"
   end

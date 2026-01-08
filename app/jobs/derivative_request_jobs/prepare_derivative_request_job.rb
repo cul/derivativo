@@ -6,7 +6,8 @@ class DerivativeRequestJobs::PrepareDerivativeRequestJob < ApplicationJob
   # Evaluates the given resource and queues a new DerivativeRequestJob on the appropriate queue,
   # based on resource type.
   def perform(
-    identifier:, delivery_target:, main_uri:, adjust_orientation:, requested_derivatives:, access_uri: nil, poster_uri: nil
+    identifier:, delivery_target:, main_uri:, adjust_orientation:, requested_derivatives:,
+    service_uri: nil, access_uri: nil, poster_uri: nil
   )
     derivative_request = DerivativeRequest.find_by(identifier: identifier)
     derivative_request&.with_lock do
@@ -49,6 +50,7 @@ class DerivativeRequestJobs::PrepareDerivativeRequestJob < ApplicationJob
       main_uri: main_uri,
       adjust_orientation: adjust_orientation,
       requested_derivatives: requested_derivatives,
+      service_uri: service_uri,
       access_uri: access_uri,
       poster_uri: poster_uri
     )
