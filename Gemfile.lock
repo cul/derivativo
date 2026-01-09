@@ -267,7 +267,7 @@ GEM
       net-protocol
     net-ssh (7.3.0)
     nio4r (2.7.4)
-    nokogiri (1.18.10)
+    nokogiri (1.19.0)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
     ostruct (0.6.3)
@@ -532,4 +532,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   2.4.19
+   2.4.22
