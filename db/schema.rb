@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2025_12_21_162435) do
+ActiveRecord::Schema[7.1].define(version: 2026_01_09_005229) do
   create_table "derivative_requests", force: :cascade do |t|
     t.string "identifier", null: false
     t.text "requested_derivatives", null: false
