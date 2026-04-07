@@ -9,6 +9,7 @@ describe Derivativo::DerivativeRequestParamsContract do
   let(:delivery_target) { 'hyacinth2' }
   let(:main_uri) { 'file:///path/to/file.mov' }
   let(:requested_derivatives) { ['access'] }
+  let(:service_uri) { 'file:///path/to/service.mov' }
   let(:access_uri) { 'file:///path/to/file.mp4' }
   let(:poster_uri) { 'file:///path/to/file.tiff' }
   let(:adjust_orientation) { 0 }
@@ -26,6 +27,7 @@ describe Derivativo::DerivativeRequestParamsContract do
   end
   let(:required_and_optional_derivative_request_params_hash) do
     required_derivative_request_params_hash.merge({
+      service_uri: service_uri,
       access_uri: access_uri,
       poster_uri: poster_uri,
       options: options

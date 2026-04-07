@@ -23,6 +23,7 @@ class DerivativeRequestJobs::DerivativeRequestJob < ApplicationJob
       requested_derivatives: derivative_request.requested_derivatives,
       adjust_orientation: derivative_request.adjust_orientation,
       main_uri: derivative_request.main_uri,
+      service_uri: derivative_request.service_uri,
       access_uri: derivative_request.access_uri,
       poster_uri: derivative_request.poster_uri
     )
@@ -46,9 +47,10 @@ class DerivativeRequestJobs::DerivativeRequestJob < ApplicationJob
   end
 
   def handle_and_rethrow_unexpected_error(derivative_request, e)
+    error_message = "#{e.message}\n#{e.backtrace.join("\n\t")}"
     derivative_request.update!(
       status: :failure,
-      error_message: "#{e.message}\n#{e.backtrace.join("\n\t")}"
+      error_message: error_message
     )
     # And re-raise the exception so that we don't hide it
     raise e

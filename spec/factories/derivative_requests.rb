@@ -14,6 +14,7 @@ FactoryBot.define do
     error_message { nil }
     delivery_target { 'hyacinth2' }
     main_uri { 'file:///path/to/file' }
+    service_uri { nil }
     access_uri { nil }
     poster_uri { nil }
   end

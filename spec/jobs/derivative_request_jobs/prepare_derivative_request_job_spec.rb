@@ -9,6 +9,7 @@ RSpec.describe DerivativeRequestJobs::PrepareDerivativeRequestJob do
   let(:delivery_target) { 'hyacinth2' }
   let(:main_uri) { 'file:///path/to/file.mov' }
   let(:requested_derivatives) { ['access'] }
+  let(:service_uri) { 'file:///path/to/service.mov' }
   let(:access_uri) { 'file:///path/to/file.mp4' }
   let(:poster_uri) { 'file:///path/to/file.tiff' }
   let(:adjust_orientation) { 0 }
@@ -19,6 +20,7 @@ RSpec.describe DerivativeRequestJobs::PrepareDerivativeRequestJob do
       delivery_target: delivery_target,
       main_uri: main_uri,
       requested_derivatives: requested_derivatives,
+      service_uri: service_uri,
       access_uri: access_uri,
       poster_uri: poster_uri,
       adjust_orientation: adjust_orientation

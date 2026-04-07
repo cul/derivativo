@@ -42,7 +42,7 @@ class Derivativo::DeliveryAdapter::Hyacinth2
   def handle_payload_access_copy(payload, derivative_package)
     return unless derivative_package.generated_access_tempfile
 
-    payload['access_copy_file'] = Faraday::Multipart::FilePart.new(
+    payload['access_file'] = Faraday::Multipart::FilePart.new(
       derivative_package.generated_access_tempfile.path,
       BestType.mime_type.for_file_name(derivative_package.generated_access_tempfile.path),
       File.basename(derivative_package.generated_access_tempfile.path)

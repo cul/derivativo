@@ -11,11 +11,11 @@ jobs:
     runs-on: ubuntu-24.04
     strategy:
       matrix:
-        ruby-version: ['3.2.2']
+        ruby-version: ['3.3.8']
         node: ['20']
     env:
       RAILS_ENV: test
-      NOKOGIRI_USE_SYSTEM_LIBRARIES: true
+      # NOKOGIRI_USE_SYSTEM_LIBRARIES: true
       TIKA_VERSION: 2.9.0
       TIKA_DOWNLOAD_DIR: /tmp/downloads/tika
       TIKA_JAR_PATH: /tmp/downloads/tika/tika-app.jar

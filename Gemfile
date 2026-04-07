@@ -24,11 +24,11 @@ gem 'imogen', git: 'https://github.com/cul/imogen.git', branch: 'iiif_tile_gener
 gem 'jbuilder', '~> 2.7'
 # Use mysql as a database option for Active Record
 gem 'mysql2', '~> 0.5.5'
-gem 'nokogiri', '~> 1.18', '>= 1.18.9', force_ruby_platform: true
+gem 'nokogiri', '~> 1.18', '>= 1.18.10', force_ruby_platform: true
 # Use Puma as the app server
 gem 'puma', '~> 5.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 7.0.8'
+gem 'rails', '~> 7.1.2'
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 4.8' # NOTE: Updating the redis gem to v5 breaks the current redis namespace setup
 gem 'redis-namespace', '~> 1.11'
@@ -65,7 +65,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # rspec for testing
   gem 'rspec', '>= 3.11'
-  gem 'rspec-rails', '~> 6.0'
+  gem 'rspec-rails', '~> 6.1'
   # json_spec for easier json comparison in tests
   gem 'json_spec'
   # simplecov for test coverage reports
@@ -76,7 +76,7 @@ end
 
 group :development do
   # Capistrano gems for deployment
-  gem 'capistrano', '~> 3.18.0', require: false
+  gem 'capistrano', '~> 3.19.0', require: false
   gem 'capistrano-cul', require: false
   gem 'capistrano-passenger', '~> 0.1', require: false
   gem 'capistrano-rails', '~> 1.4', require: false
