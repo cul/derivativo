@@ -11,7 +11,7 @@ set :rvm_custom_path, '~/.rvm-alma8'
 set :remote_user, 'ldpdserv'
 set :application, 'derivativo'
 set :repo_name, fetch(:application)
-set :repo_url, "git@github.com:cul/ren-#{fetch(:repo_name)}.git"
+set :repo_url, "git@github.com:cul/#{fetch(:repo_name)}.git"
 set :deploy_name, "#{fetch(:application)}_#{fetch(:stage)}"
 # used to run rake db:migrate, etc
 set :rails_env, fetch(:deploy_name)
