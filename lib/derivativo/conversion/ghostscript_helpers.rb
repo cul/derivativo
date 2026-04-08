@@ -63,15 +63,13 @@ module Derivativo
       def self.pdf_to_image_conversion_command(ghostscript_binary_path, src_file_path, dst_file_path)
         [
           ghostscript_binary_path,
-          '-dNOPAUSE',
+          '-dSAFER',
+          '-dNOPAUSE', '-dBATCH', # non-interactive mode
           "-sDEVICE=#{dst_file_path.ends_with?('.jpg') ? 'jpeg' : 'png16m'}",
-          '-dTextAlphaBits=4',
-          '-dGraphicsAlphaBits=4',
-          '-r300'
-          # First page and last page params aren't necessary if we're always doing the first page,
-          # but this is how we would select a different page (if we want to in the future):
-          # '-dFirstPage=1',
-          # '-dLastPage=1'
+          '-dTextAlphaBits=4', '-dGraphicsAlphaBits=4',
+          '-r300',
+          # Only select the first page
+          '-dFirstPage=1', '-dLastPage=1'
         ].concat(
           [
             "-sOutputFile=#{Shellwords.escape(dst_file_path)}",
